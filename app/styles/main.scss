@@ -2,25 +2,225 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+$small-screen: em(320); 
+
+$knockout: #FFFFFF; //white
+$primary-accent-color: #E26331; //orange
+$primary-neutral-color: #6D7178; //medium gray
+
+$font-stack: Verdana, sans-serif;
+
 // Custom Styles
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+  background: $knockout;
+  font-family: 100% $font-stack;
+  color: $primary-neutral-color;
+  a {
+    color: $primary-accent-color;
+    text-decoration: none;
   }
 }
+
+header {
+  overflow: hidden;
+  width: 100%;
+  background: #ffffff;
+  padding-bottom: 1.75em;
+  z-index: 2;
+  .wrap {
+    overflow: hidden;
+    max-width: 1080px;
+    width: 85%;
+    margin: 0 auto;
+    .logo {
+      max-width: 40px;
+      max-height: 80px;
+      float: left;
+      padding-top: 1.35em;
+    }
+    .nav-collapse {
+      transition: max-height 250ms;
+      transition-property: max-height;
+      transition-duration: 250ms;
+      transition-timing-function: initial;
+      transition-delay: initial;
+      position: relative;
+      float: right;
+      
+      ul {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: block;
+        list-style: none;
+        text-align: right;
+        li {
+          @include media($small-screen)  {
+            float: left;
+            margin-left: 40px;
+            margin-bottom: 0;
+          }
+          display: block;
+          margin-bottom: 1em;
+          // Remove this style once navigation is functional.
+          .active {
+            color: $primary-accent-color;
+            border-top: 4px solid $primary-accent-color;
+            &:hover {
+              border-top: 4px solid $primary-accent-color;
+            }
+          }
+          a {
+            color: $primary-neutral-color;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            display: block;
+            border-top: 4px solid $knockout;
+            padding-top: 30px;
+            .carrot {
+              padding-left: 10px;
+              padding-bottom: 1.5px;
+            }
+            &:hover {
+              border-top: 4px solid $primary-neutral-color;
+            }
+            &:active {
+              color: $primary-accent-color;
+              border-top: 4px solid $primary-accent-color;
+            }
+          }
+          .button {
+            color: $knockout;
+            background: $primary-accent-color;
+            border-top: 0;
+            padding: 10px;
+            margin-top: 25px;
+            border-radius: 3px;
+            &:hover {
+              background: $primary-neutral-color;
+              border-top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .nav-toggle {
+      // @include media($medium-screne) {
+        display: none;
+      // }
+    }
+  }
+}
+
+.hero {
+  padding: 1.75em 0;
+  background-image: url(../images/Home-assets/bg.jpg);
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-position: center -100px;
+  background-attachment: fixed;
+  .billboard {
+    @include outer-container;
+    .messaging {
+      @include span-columns(8);
+      overflow: hidden;
+      margin: 0 auto;
+      padding-right: 40px; 
+      font-family: $font-stack;
+      color: $knockout;
+      h1 {
+        font-size: 48px;
+        font-weight: 400;
+        span {
+          font-weight: 600;
+          color: $primary-accent-color;
+        }
+      }
+      p {
+        font-size: 20px;
+        font-weight: normal;
+        span {
+          font-weight: 600;
+          color: $primary-accent-color;
+        }
+      }
+    }
+    .score {
+      @include span-columns(4);
+      text-align: center;
+    }
+    .cta {
+      @include span-columns(12);
+      text-align: center;
+      button {
+        color: $knockout;
+        margin: 20px auto;
+        background: $primary-accent-color;
+        border: 0;
+        border-radius: 3px;
+        font-size: 15px;
+        font-weight: normal;
+        padding: 16px 60px;
+        &:hover {
+          background: $primary-neutral-color;
+        }
+      }
+    }
+    
+  }
+
+}
+
+.mission {
+  @include outer-container;
+  background: $knockout;
+  // font-family: $font-stack;
+  text-align: center;
+  h2 {
+    @include span-columns(12);
+    font-weight: 100;
+  }
+  p {
+    @include span-columns(12);
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 1.5em;
+  }
+  hr {
+    @include span-columns(2);
+    @include shift(5);
+    border: 0.1em solid $primary-accent-color;
+  }
+}
+
+.guide {
+  @include outer-container;
+  h2 {
+    @include span-columns(12);
+    text-align: center;
+    font-weight: 100;
+    span {
+          font-weight: 600;
+          color: $primary-accent-color;
+    }
+  }
+}
+
+// .hero-unit {
+//   margin: 50px auto 0 auto;
+//   width: 600px;
+//   font-size: 18px;
+//   font-weight: 200;
+//   line-height: 30px;
+//   background-color: #eee;
+//   border-radius: 6px;
+//   padding: 60px;
+//   h1 {
+//     font-size: 60px;
+//     line-height: 1;
+//     letter-spacing: -1px;
+//   }
+// }

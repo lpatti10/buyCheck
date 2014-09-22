@@ -15,30 +15,77 @@
   </head>
   <body>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
+      <div class="wrapper">
+        
+        <header>
+            <div class="wrap">
+                <div class="logo">
+                    <a href="#"><img src="../images/Home-assets/logo.png" alt="Buy Check logo"></a>
+                </div>
 
-        <li>Sass</li>
+                <nav class="nav-collapse closed" role="navigation" aria-hidden="false" style="-webkit-transition: max-height 250ms; transition: max-height 250ms; position: relative;">
+
+                    <ul>
+                       <!--  Remove class of "active" on Home link once navigation is functional. -->
+                        <li><a href="#" class="active">HOME</a></li>
+                        <li><a href="#">MY DEAL<img src="../images/Home-assets/drop_arrow.png" class="carrot"></a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#" class="button">LOGIN</a></li>
+                    </ul>
+
+                </nav>
+
+                <a href="#" class="nav-toggle" aria-hidden="true">MENU</a>
+
+            </div>
+        </header>
+<!--
+        <script>
+          var nav = responsiveNav(".nav-collapse");
+        </script>
+-->
+        <div class="hero">
+            <section class="billboard">
+                <div class="messaging">
+                    <h1>Don’t buy a car without your <span>BuyCheck</span></h1>
+                    <p>Buying a car can be a painful and confusing experience. We eliminate pain and frustration by helping to validate your choice through every step of the process.</p>
+                    <p>So far we have BuyChecked <span>60887</span> deals and helped <span>1348</span> users.</p>
+                </div>
+                <div class="score">
+                    <img src="../images/Home-assets/score.png" />
+                </div>
+                <div class="cta">
+                    <button>GET STARTED</button>
+                </div>
+            </section>
+        </div>
+        
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque accumsan risus. Etiam tincidunt elementum mauris, nec cursus mauris <a href="#" >fermentum venenatis</a>. In sit amet massa at justo mattis ornare et sed eros. <a href="#">Suspendisse</a> et lorem ex. Vivamus mattis tortor massa, id eleifend nulla elementum sit amet. Suspendisse mauris odio, ullamcorper eget volutpat id, condimentum non elit. </p>
+            <hr>
+        </section>
+            
+        <section class="guide">
+            <h2>We’ll guide you through Some Easy Steps to get your <span>BuyCheck</span></h2>
 
 
-        <li>Modernizr</li>
+        </section>
 
 
-        <li>Bourbon & Neat</li>
 
 
-        <li>UnderscoreJS</li>
 
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
-    </div>
 
-    <script src="scripts/vendor.js"></script>
 
-        <script src="scripts/main.js"></script>
+
+        </div>
+
+        <script src="scripts/vendor.js"></script>
+
+            <script src="scripts/main.js"></script>
+    </div> <!-- End of wrapper -->
 </body>
 </html>
