@@ -5,7 +5,7 @@
 $small-screen: em(320); 
 
 $knockout: #FFFFFF; //white
-$primary-accent-color: #E26331; //orange
+$primary-accent-color: #FE772E; //orange in logo #E26331
 $primary-neutral-color: #6D7178; //medium gray
 
 $font-stack: Verdana, sans-serif;
@@ -107,7 +107,7 @@ header {
     }
 
     .nav-toggle {
-      // @include media($medium-screne) {
+      // @include media($medium-screen) {
         display: none;
       // }
     }
@@ -174,38 +174,92 @@ header {
 
 }
 
-.mission {
+section.mission {
   @include outer-container;
   background: $knockout;
   // font-family: $font-stack;
   text-align: center;
-  h2 {
+  >h2 {
     @include span-columns(12);
     font-weight: 100;
   }
-  p {
+  >p {
     @include span-columns(12);
     font-weight: 100;
     font-size: 20px;
     line-height: 1.5em;
   }
-  hr {
+  >hr {
     @include span-columns(2);
     @include shift(5);
     border: 0.1em solid $primary-accent-color;
   }
 }
 
-.guide {
+section.steps {
   @include outer-container;
-  h2 {
+  >h2 {
     @include span-columns(12);
     text-align: center;
     font-weight: 100;
     span {
-          font-weight: 600;
-          color: $primary-accent-color;
+      font-weight: 600;
+      color: $primary-accent-color;
     }
+  }
+}
+
+section.video {
+  @include outer-container;
+  background: $knockout;
+  // font-family: $font-stack;
+  text-align: center;
+  >h3 {
+    @include span-columns(12);
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+  >img {
+    margin: 0 auto;
+  }
+  >hr {
+    @include span-columns(2);
+    @include shift(5);
+    border: 0.1em solid $primary-accent-color;
+  }
+}
+
+section.reviews {
+  @include outer-container;
+  background: $knockout;
+  >h3 {
+    @include span-columns(12);
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  >img.avatar {
+    @include span-columns(2);
+    text-align: center;
+    max-width: 100%;
+  }
+  >p {
+    @include span-columns(8);
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 1.5em; 
+    .author {
+      display: block;
+      text-align: right;
+    }
+    .title {
+      display: block;
+      text-align: right;
+    }
+  }
+  >img.controls {
+    @include span-columns(1);
+    max-width: 20%;
   }
 }
 
