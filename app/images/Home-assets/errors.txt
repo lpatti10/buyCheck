@@ -1,1 +1,1 @@
-[Mon Sep 22 2014 18:28:28 GMT-0400 (EDT)] Layer "Facebook   |   Twitter   |   Google +": Expected end of input but "+" found.
+[Wed Sep 24 2014 18:45:21 GMT-0400 (EDT)] Layer "Facebook   |   Twitter   |   Google +": Expected end of input but "+" found.

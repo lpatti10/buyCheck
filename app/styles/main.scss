@@ -12,6 +12,7 @@ $font-stack: Verdana, sans-serif;
 
 // Custom Styles
 body {
+
   background: $knockout;
   font-family: 100% $font-stack;
   color: $primary-neutral-color;
@@ -28,17 +29,21 @@ header {
   padding-bottom: 1.75em;
   z-index: 2;
   .wrap {
-    overflow: hidden;
-    max-width: 1080px;
-    width: 85%;
-    margin: 0 auto;
+    @include outer-container;
+    // overflow: hidden;
+    // max-width: 1080px;
+    // width: 85%;
+    // margin: 0 auto;
     .logo {
+      @include span-columns(5);
+      // @include shift(1);
       max-width: 40px;
       max-height: 80px;
       float: left;
       padding-top: 1.35em;
     }
     .nav-collapse {
+      @include span-columns(7);
       transition: max-height 250ms;
       transition-property: max-height;
       transition-duration: 250ms;
@@ -46,7 +51,6 @@ header {
       transition-delay: initial;
       position: relative;
       float: right;
-      
       ul {
         margin: 0;
         padding: 0;
@@ -105,7 +109,6 @@ header {
         }
       }
     }
-
     .nav-toggle {
       // @include media($medium-screen) {
         display: none;
@@ -113,7 +116,6 @@ header {
     }
   }
 }
-
 .hero {
   padding: 1.75em 0;
   background-image: url(../images/Home-assets/bg.jpg);
@@ -151,6 +153,7 @@ header {
     .score {
       @include span-columns(4);
       text-align: center;
+      margin-top: 50px;
     }
     .cta {
       @include span-columns(12);
@@ -209,6 +212,181 @@ section.steps {
   }
 }
 
+.pathway {
+  @include outer-container;
+  position: relative;
+  background: $knockout;
+  z-index: 1;
+  .guide_one {
+    @include span-columns(4);
+    @include shift(1);
+    padding: 20px;
+    border: 0.1em solid $primary-accent-color;
+    border-radius: 3px;
+    >img {
+      // border: 0.1em solid red;
+      float: left;
+    }
+    >p {
+      // border: 0.1em solid red;
+      font-size: 14px;
+      font-family: $font-stack;
+      margin-left: 45px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .node {
+    border-radius: 14px;
+    height: 14px;
+    width: 14px;
+    background: $primary-accent-color;
+    z-index: -9;
+    position: absolute;
+    left: 49.5%;
+  }
+  .spine {
+    // @include span-columns(1);
+    position: absolute;
+    left: 50%;
+    // margin: 0 auto;
+    // @include shift(5);
+    // background: pink;
+    height: 1500px;
+    border-right: 4px solid $primary-accent-color;
+    z-index: -10;
+  }
+  .blank {
+    @include span-columns(6);
+    // background: pink;
+    height: 50px;
+  }
+
+  .score_nav {
+    @include span-columns(12);
+    z-index: 2;
+    padding: 20px;
+    margin-top: 20px;
+    border: 0.1em solid $primary-accent-color;
+    border-radius: 3px;
+    background: $knockout;
+    >img {
+      max-width: 100%;
+    }
+  }
+  .guide_two {
+    @include span-columns(4);
+    @include shift(7);
+    padding: 20px;
+    margin-top: 20px;
+    border: 0.1em solid $primary-accent-color;
+    border-radius: 3px;
+    >img {
+      // border: 0.1em solid red;
+      float: left;
+    }
+    >p {
+      // border: 0.1em solid red;
+      font-size: 14px;
+      font-family: $font-stack;
+      margin-left: 45px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .panel {
+    @include span-columns(4);
+    @include shift(1);
+    padding: 20px;
+    margin-top: 20px;
+    color: $knockout;
+    font-size: 14px;
+    font-family: $font-stack;
+    // font-weight: 100;
+    border: 0.1em solid $primary-accent-color;
+    border-radius: 3px 3px 0 0;
+    background: $primary-accent-color;
+    background-image: url(../images/Home-assets/car_icon.png);
+    background-repeat: no-repeat;
+    >img {
+      max-width: 100%;
+    }
+    >button {
+      color: $primary-accent-color;
+      margin: 20px auto;
+      background: $knockout;
+      text-transform: uppercase;
+      // text-align: right;
+      border: 0;
+      border-radius: 3px;
+      font-size: 15px;
+      font-weight: normal;
+      padding: 16px 60px;
+      &:hover {
+        background: $primary-neutral-color;
+      }
+    }
+    .detail_one {
+      // @include span-columns(4);
+      // @include shift(1);
+      padding: 20px;
+      margin-top: 0px;
+      color: $primary-accent-color;
+      font-size: 14px;
+      font-family: $font-stack;
+      // font-weight: 100;
+      border: 0.1em solid $primary-accent-color;
+      border-radius: 3px;
+      .detail_fpo {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .right {
+    @include span-columns(4);
+    @include shift(2);
+  }
+  //staggered panel test
+  // .void {
+  //   @include span-columns(4);
+  //   @include shift(2);
+  //   &.black {
+  //     background: black;
+  //     height: 200px;
+  //   }
+  //   &.red {
+  //     background: red;
+  //     height: 500px;
+  //   }
+  //   &.blue {
+  //     background: blue;
+  //     height: 300px;
+  //   }
+  //   &.yellow {
+  //     background: yellow;
+  //     height: 200px;
+  //   }
+  //   &.purple {
+  //     background: purple;
+  //     height: 100px;
+  //   }
+  //   &.pink {
+  //     background: pink;
+  //     height: 200px;
+  //   }
+  // }
+  // .bumper {
+  //   @include span-columns(4);
+  //   @include shift(2);
+  //   background: pink;
+  //   height: 305px;
+  // }
+}
+
+
+
+
 section.video {
   @include outer-container;
   background: $knockout;
@@ -221,6 +399,9 @@ section.video {
   }
   >img {
     margin: 0 auto;
+    max-width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
   >hr {
     @include span-columns(2);
@@ -237,29 +418,47 @@ section.reviews {
     font-weight: 100;
     text-transform: uppercase;
     text-align: center;
+    font-size: 24px;
+    margin-bottom: 0;
   }
   >img.avatar {
     @include span-columns(2);
     text-align: center;
-    max-width: 100%;
+    max-width: 80%;
   }
   >p {
     @include span-columns(8);
     font-weight: 100;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 1.5em; 
+    padding-top: 20px;
     .author {
       display: block;
       text-align: right;
+      font-size: 18px;
+      padding-right: 50px;
+
     }
     .title {
       display: block;
       text-align: right;
+      padding-right: 50px;
     }
   }
   >img.controls {
     @include span-columns(1);
-    max-width: 20%;
+    padding: 10px;
+    padding-top: 60px;
+    max-width: 100%;
+  }
+}
+
+footer {
+  @include outer-container;
+  >img {
+    @include span-columns(3);
+    max-width: 25%;
+    margin-top: 50px;
   }
 }
 
