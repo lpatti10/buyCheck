@@ -1,0 +1,1 @@
+[Wed Sep 24 2014 20:40:57 GMT-0400 (EDT)] Layer "Facebook   |   Twitter   |   Google +": Expected end of input but "+" found.
